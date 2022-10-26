@@ -12,11 +12,12 @@ namespace CSharp06
 
         //외부 공개 Getter(프로퍼티)
         //Count를 통해 값을 가져갈때 자신의 값이 아닌 index변수의 값을 리턴하라.
+        
         public int Count
         {
             //기본적으로 존재하는 get기능을 내가 구현했다
             //index의 '값'은 사실상 가지고 있는 값의 개수와 동일하다
-            //따라 get(가져갈수만 있는 )변수를 만들고 index값을 반환시켰다
+            //따라서 get(가져갈수 만 있는 )변수를 만들고 index값을 반환시켰다
             get
             {
                 return index;
@@ -51,6 +52,7 @@ namespace CSharp06
             //횟수를 array.Length만큼 돌면 원하는 결과가 나오지 않는다.
             //왜? 현재 배열은 20개의 길이를 가지지만 이것은 대입받는 값의 갯수는 아니다.
             //따라서 실제 대입받은 값의 개수만큼 열거(=Enumerate)시킨다
+            //for ->foreach ->array i번째로 가저가서 ->리턴한다
             for (int i = 0; i < Count; i++)
                 yield return array[i];
         }
@@ -61,7 +63,6 @@ namespace CSharp06
             return GetEnumerator();
         }
     }
-
 
     internal class Program2
     {
